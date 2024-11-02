@@ -1,0 +1,269 @@
+@font-face{
+    src: url(assets/fonts/static/DMSans-Regular.ttf);
+    font-family: dmsans;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0%;
+    background-color: rgb(0, 0, 0);
+    font-family: dmsans;
+}
+.main{
+    height: 100vh;
+    width: 80%;
+    background-color: rgb(246, 246, 246);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    margin-top: 40px;
+    height: 88vh;
+    width: 78%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 3px 3px 5px gray, -3px -3px 5px rgb(128, 128, 128);
+}
+.creat-post{
+    height: 98%;
+    width: 20%;
+    margin: 7px;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgb(250, 237, 223);
+    height: 47%;
+    margin: 5px 5px 10px 5px;
+    border-radius: 8px;
+}
+.text{
+    height: 50%;
+    margin: 15px;
+    line-height: 22px;
+}
+img{
+    height: 60px;
+}
+.your-content{
+    height: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgb(218, 175, 81);
+    margin: 8px 5px 5px 5px;
+    border-radius: 8px;
+}
+.text2{
+    line-height: 20px;
+    height: 50%;
+    width: 60%;
+    margin: -8px 30px 0px 0px;
+}
+.pic img{
+    height: 135px;
+    margin: 3px 4px 12px 6px;
+}
+
+/* second-divv */
+
+.second-div{
+    height: 96%;
+    width: 75%;
+}
+.social{
+    display: flex;
+    margin: 0px 0px 6px 9px;
+    height: 70%;
+    width: 100%;
+}
+.five-star{
+    width: 65%;
+}
+.five{
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 54%;
+    width: 97%;
+    background-color: rgb(94, 56, 189);
+    margin: 0px 0px 5px 0px;
+    
+}
+.text-social{
+    width: 73%;
+    font-size: 17px;
+    line-height: 35px;
+    color: white;
+}
+.stars img{
+    height: 21px;
+}
+.stars{
+    margin: -14x 6px 5px 0px;
+    height:fit-content;
+    line-height: 0px;
+    color: white;
+}
+.platforms{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.insta-sign{
+    margin: 7px 8px 7px 0px;
+    width: 48%;
+    height: 148px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+}
+.calendar{
+    margin: 7px 8px 7px 7px;
+    height: 148px;
+    width: 50%;
+    border-radius: 8px;
+    background-color:rgb(218, 175, 81) ;
+}
+.pics{
+    overflow: hidden;
+    width: 82%;
+    margin: 12px 0px 0px 30px;
+}
+.manage-text{
+    margin-top: -13px;
+    margin-left: 15px;
+    width: 70%;
+    line-height: 19px;
+}
+.pics img{
+    height: 42px;
+}
+.maintan-text{
+    margin: -8px 0px 0px 19px;
+    line-height:18px ;
+    width: 70%;
+}
+
+.cal-pic img{
+    height: 108px;
+}
+.cal-pic{
+    margin: -11px 0px 0px 17px;
+    height: 39%;
+    width: 80%;
+    overflow: hidden;
+}
+
+/* graph */
+.graph{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: end;
+    width: 155px;
+    border-radius: 9px;
+    background-color:rgb(214, 198, 228);
+    margin: 0px 0px 3px 9px;
+}
+.schedule{
+    margin-right: 16px;
+    width: 75%;
+    height: 20%;
+}
+.graph-pic{
+    height: 50%;
+    width: 84%;
+    overflow: hidden;
+}
+.graph-pic img{
+    height: 178px;
+    width: 203px;
+}
+.para{
+    color: black;
+    margin-right: 20px;
+    line-height: 13px;
+    font-size: 13px;
+    width: 73%;
+}
+.followers{
+    display: flex;
+    height: 27%;
+    width: 100%;
+    margin-top: 11px;
+}
+.audience-pic{
+    height: 52px;
+    display: flex;
+    justify-content: center;
+}
+.audience-pic img{
+    height: 46px;
+}
+.audience-main{
+    margin: 3px 9px 0px 5px;
+    background-color: rgb(255, 255, 255);
+    width: 31%;
+    border-radius: 9px;
+}
+.aa{
+    height: 39px;
+    font-weight: 600;
+    font-size: 45px;
+}
+.aa p{
+    margin-top: -4px;
+    margin-left: 27px;
+}
+.fast{
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    height: 28px;
+}
+.grow-follower{
+    display: flex;
+    background-color: rgb(94, 56, 189);
+    width: 59%;
+    margin: 3px 0px 2px 7px ;
+    border-radius: 9px;
+
+}
+.grow-pic{
+    width: 44%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.grow-pic img{
+    height: 90%;
+    width: 98%;
+    margin-left: 15px;
+    margin-top: 3px;
+}
+.grow{
+    justify-content: center;
+    width: 49%;
+    margin-left: 17px;
+}
+.grow p{
+    font-size: 23px;
+    font-weight: bolder;
+    margin-top: 30px;
+    line-height: 21px;
+    color: white;
+}
+.attribution{
+    margin-top: -11px;
+}
+
+
+/* Responsive part */
+

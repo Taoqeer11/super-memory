@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <script type="text/javascript">
+            const buttons = document.querySelectorAll('a');
+            buttons.forEach(btn => {
+                btn.addEventListener('click',function(e) {
+                    let x = e.clientX - e.target.offsetLeft;
+                    let y = e.clientY - e.target.offsetTop;
+
+                    let ripples = document.createElement('span');
+                    ripples.style.left = x + 'px';
+                    ripples.style.top = y + 'px';
+                    this.appendChild(ripples);
+
+                    setTimeOut(() => {
+                        ripples.remove()
+                    },1000);
+                })
+            })
+        </script>
+
+     <div class="header">
+
+            <div class="logo">
+                <i class="fa-solid fa-location-dot"></i>
+                <a href="#">Lorem ipsum dolor sit amet,</a>
+            </div>
+            <div class="contact">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call: +92 01234567890</span>
+            </div>
+            <div class="mail">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="#">support@gmail.com</a>
+            </div>
+     </div>
+
+     <!-- Hero section -->
+     <div class="navbar">
+        <div class="menu">
+          <div class="guard">  <a href="index.html">Guarder</a></div>
+            <div class="menu_color" style="background-color: #1c1c1c;"><a href="index.html" >HOME</a></div>  
+            <div class="menu_color"><a href="ABOUT.html">ABOUT</a></div>
+            <div class="menu_color"><a href="SERVICE.html">SERVICE</a></div>
+            <div class="menu_color"><a href="GUARDS.html">GUARDS</a></div> 
+            <div class="menu_color"><a href="CONTACT_US.html">CONTACT US</a></div>
+        </div>
+        <div class="safety">
+            <h1>Your Saftey</h1>
+            <h1 style="color: yellow;">Our Responsibility</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod magna aliqua. Ut enim ad minim veniam</p>
+            <button class="read">Read More</button>
+            <button class="get">Get A Quote</button>
+        </div>
+        
+     </div>
+
+     <!-- section Two -->
+        <div class="sec_two">
+            <div class="vehicle">
+
+            </div>
+            <div class="who_are">
+                <div class="contant">
+                    <h1>WHO_ARE WE?</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elitconsectetur adipisicing elit.Ut commodi porro assumenda expedita itaque tenetur possimus illoodio nesciunt esse place. expedita itaque tenetur possimus illo odio nesciunt esse placeat, ipsum, maxime quod animi dicta aspernatur.At,harum maxime!</P>
+                    <button>READ MORE</button>  
+                </div> 
+            </div>
+        </div>
+
+        <!--  SECTION THREE -->
+
+          <div class="sec_thre">
+              <div class="heading">
+                  <h1>OUR SERVICS</h1>
+              </div>
+                <div class="service">
+                    <div class="box1">
+                        <img src="images/favicon.png" alt="" style="height: 18vh; padding-bottom: 12%; width: 31%;">
+                        <h2>HOME SECURITY</h2>
+                        <p>Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.</p>
+                        <button>Read More</button>  
+                    </div>
+
+                    <div class="box1">
+                        <img src="images/office.png" alt="" style="height: 17vh; width: 29%; padding-bottom: 14%; ">
+                        <h2>OFFICE SECURITY</h2>
+                        <p>Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.</p>
+                        <button>Read More</button>  
+                    </div>
+                    
+                    <div class="box1">
+                        <img src="images/body.png" alt="" style="height: 29vh; width: 45%; padding-bottom: 0%; margin-top: -10%;">
+                        <h2>BODY GUARD</h2>
+                        <p>Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.</p>
+                        <button>Read More</button>  
+                    </div>
+                </div>
+          </div>
+
+          <!-- Sec four -->
+           
+          <div class="sec_four">
+                <div class="client">
+                    <h1>What Is Says Our Clients</h1>
+                </div>
+                <div class="contant1">
+                    <div class="imgg"></div>
+                    
+                    <h2>Minim Veniam</h2>
+                     <p> Dolor sit amet consectetur adipisicing laboris nisi esse aspernatur delectus deleniti architecto nesciunt sequi id porro autem illum molestias perspiciatis itaque rerum fugit. Laboriosam!
+                      Asperiores,ipsum?
+                    </p>
+                </div>
+          </div>
+
+          <!-- Section Five -->
+           <div class="sec_five">
+                <div class="form">
+                    <h1>GET IN TOUCH</h1>
+                    <input type="text" placeholder="FULL NAME">
+                    <input type="email" placeholder="EMAIL">
+                    <input type="number" placeholder="PHONE NUMBER">
+                    <input type="message" placeholder="MESSAGE">
+                    <button><h2>SEND</h2></button>
+                </div>
+           </div>
+
+        <!-- SECTION SIX -->
+    <div class="sec_six">
+        <div class="our_guard">
+            <h1>OUR_GUARDS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur natus iste sunt suscipit, quam consectetur dicta nostrum, libero, fugiat quod deleniti nam soluta tempore sed officiis! Similique obcaecati tempora ratione.</p>
+        
+        </div>
+        <div class="guards">
+            <div class="guard1" style="background-image: url(images/t1.jpg);height: 62vh; width: 27%; background-size: cover;">
+                <!-- <img src="/project_Guard/images/t1.jpg" alt="" style="height: 62vh; width: 100%;"> -->
+                    <div class="para"><h2>Martin Anderson</h2>
+                        <h3>supervisor</h3>
+                    </div>
+            </div>
+            <div class="guard1"  style="background-image: url(images/t2.jpg);height: 62vh; width: 27%; background-size: cover;">
+                <!-- <img src="/project_Guard/images/t2.jpg" alt="" style="height: 62vh; width: 100%;"> -->
+                    <div class="para"><h2>Martin Anderson</h2>
+                        <h3>supervisor</h3>
+                    </div>
+            </div>
+            <div class="guard1"  style="background-image: url(images/t3.jpg);height: 62vh; width: 27%; background-size: cover;">
+                <!-- <img src="/project_Guard/images/t3.jpg" alt="" style="height: 62vh; width: 100%;"> -->
+                    <div class="para"><h2>Martin Anderson</h2>
+                        <h3>supervisor</h3>
+                    </div>
+            </div>
+        </div>
+        <button id="view">VIEW ALL</button>      
+     </div>
+
+         <!-- FOOTER SECTION  -->
+         
+        <div class="footer">
+            <div class="main_box">
+                <div class="g_footer1">
+                    <a href="index.html"><h3>Guarder</h3></a>
+                    <p>Dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt </p>
+                </div>
+                <div class="g_footer1">
+                    <h3>Useful Link</h3>
+                    <a href="#">dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt </a>
+                </div>
+                <div class="g_footer1">
+                    <h3>Contact Us</h3>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a href="#">Lorem Ipsum dolor amet,</a>
+
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="#">Call: +92 01234567890</a> <br>
+
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="#">support@gmail.com</a>
+                </div>
+                <div class="g_footer1">
+                    <h3>Newsletter</h3>
+                    <input type="email" placeholder="Enter Your Email">
+                    <button>SUBSCRIBE</button> <br>
+                    <i class="fa-brands fa-facebook-f" style="font-size: x-large;"></i>
+                    <i class="fa-brands fa-twitter" style="font-size: x-large;"></i>
+                    <i class="fa-brands fa-youtube" style="font-size: x-large;"></i>
+                    <i class="fa-brands fa-instagram"style="font-size: x-large;"></i>
+                </div>
+            </div>
+          <div class="copy_Right">
+            <p>© 2024 All Rights Reserved. Design by <a href="https://google.com" target="_blank" style="text-decoration: none;     color: rgb(178, 179, 180)
+;">Free Html Templates</a> </p>
+          </div>
+        </div>
+    </body>
+</html>

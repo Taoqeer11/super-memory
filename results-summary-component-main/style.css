@@ -1,0 +1,335 @@
+@font-face {
+    font-family: hanken;
+    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    color: white;
+    font-family: hanken;
+  
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    height: 95%;
+    width: 60%;
+    /* background-color: rgb(244, 244, 244); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 5px gray;
+}
+h3{
+    color:hsla(240, 41%, 8%, 0.8);
+    margin-left: 5%;
+    margin-bottom: 19px;
+}
+.box{
+    box-shadow: 3px 1px 23px -14px hsl(241, 81%, 54%);
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 55%;
+    width: 55%;
+    background-color: white;
+}
+.leftBox{
+    border-radius: 20px;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to Bottom,  hsl(252, 100%, 67%), hsl(241, 81%, 54%) );
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.circle{
+    height: 38%;
+    width: 62%;
+    border-radius: 50%;
+    background: linear-gradient(to Bottom, hsl(241, 85%, 60%), hsl(252, 73%, 46%)  );
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.circle h1{
+    margin-top: -15px;
+}
+.greatText{
+    width: 75%;
+    text-align: center;
+    justify-content: center;
+    font-size: 11px;
+}
+.greatText p{
+    color:  hsl(292, 24%, 87%);
+}
+.rightBox{
+    /* padding: 11% 0; */
+    height: auto;
+    width: 50%;
+
+}
+.reaction{
+    background-color: hsl(0, 36%, 86%);
+    height: 35%;
+    margin: 5%;
+    display: flex;
+    padding: 2% 0;
+    border-radius: 5px;
+    
+}
+span{
+    margin-left:30px;    
+}
+#n1{
+    margin-left:42px;    
+    
+}
+.para{
+    margin-left: 5px;
+}
+.memory{
+    background-color: hsl(38, 35%, 86%);
+    height: 35%;
+    border-radius: 5px;
+    margin: 5%;
+    display: flex;
+    padding: 2% 0;
+}
+.verbal{
+    border-radius: 5px;
+    background-color: hsl(167, 36%, 85%);
+    height: 35%;
+    margin: 5%;
+    display: flex;
+    padding: 2% 0;
+}
+.visual{
+    border-radius: 5px;
+    height: 35%;
+    margin: 5%;
+    display: flex;
+    padding: 2% 0;
+    background-color: hsl(234, 36%, 84%) ;
+}
+button{
+    height: 35%;
+    margin: 5%;
+    margin-top: 12%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    width: 90%;
+    border: none;
+    background-color:hsla(240, 41%, 8%, 0.8);
+}
+button:hover{
+    background: linear-gradient(to Bottom, hsl(241, 85%, 60%), hsl(252, 73%, 46%)  );
+    cursor: pointer;
+}
+img{
+    margin-left: 8px;
+}
+.attribution{
+    margin-top: 60px;
+    color: black;
+
+}
+
+
+/* Responsive part starts , (min-width:481px) and (max-width:1024px) */
+
+@media (max-width:480px){
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
+    .container{
+        height: 100%;
+        width: 100%;
+        
+    }
+    .box{
+        height: 100%;
+        width: 100%;
+        display: block;
+        border-radius: 0%;
+        box-shadow: 01px 0px 0px 0px hsl(0, 0%, 100%);
+
+
+    }
+    .leftBox{
+        border-radius: 0px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        height: 45%;
+        width: 100%;
+        background: linear-gradient(to Bottom,  hsl(252, 100%, 67%), hsl(241, 81%, 54%) );
+       
+    }
+    .circle{
+        height: 38%;
+        width: 38%;
+        border-radius: 50%;
+        background: linear-gradient(to Bottom, hsl(241, 85%, 60%), hsl(252, 73%, 46%)  );
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .greatText{
+        width: 65%;
+        text-align: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+    .rightBox{
+        height: auto;
+        width: 100%;
+    
+    }
+    .rightBox h3{
+        margin: 4%;
+    }
+
+    .reaction{
+        height: 35%;
+        border-radius: 15px;
+        margin: 3% 7%;
+        padding: 3% 0;
+    }
+    span{
+        margin-left:100px; 
+        font-size: 1.3rem;   
+    }
+    #n1{
+        margin-left:100px;    
+        
+    }
+    .para{
+        margin-left: 25px;
+    }
+    .para p{
+        font-size: 23px;
+        
+    }
+    img{
+        margin-left: 18px;
+    }
+    .memory{
+        height: 35%;
+        border-radius: 15px;
+        margin: 3% 7%;
+        padding: 3% 0;
+    }
+    .verbal{
+        height: 35%;
+        border-radius: 15px;
+        margin: 3% 7%;
+        padding: 3% 0;
+    }
+    .visual{
+        height: 35%;
+        border-radius: 15px;
+        margin: 3% 7%;
+        padding: 3% 0;
+    }
+
+    button{
+        height: auto;
+        margin: 7%;
+        /* margin-top: 8%; */
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        padding: 3% 0;
+        width: 85%;
+        border: none;
+        background-color:hsla(240, 41%, 8%, 0.8);
+    }
+    button:hover{
+        background: linear-gradient(to Bottom, hsl(241, 85%, 60%), hsl(252, 73%, 46%)  );
+        cursor: pointer;
+    }
+}
+
+
+/* Responsive for tabs */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .container {
+        width: 85%;
+        height: 90%;
+    }
+
+    .box {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    .leftBox {
+        width: 45%;
+        height: 100%;
+    }
+
+    .rightBox {
+        width: 55%;
+        padding: 5%;
+    }
+
+    .reaction, .memory, .verbal, .visual {
+        height: auto;
+        margin: 3%;
+        padding: 2%;
+    }
+
+    button {
+        width: 70%;
+    }
+}
+
+/* Large Devices (1025px and above) */
+@media (min-width: 1455px) {
+    .container {
+        width: 70%;
+        height: 90%;
+    }
+
+    .box {
+        flex-direction: row;
+        width: 100%;
+        height: 70%;
+    }
+
+    .leftBox {
+        width: 50%;
+    }
+
+    .rightBox {
+        width: 50%;
+        padding: 5%;
+    }
+
+    .reaction, .memory, .verbal, .visual {
+        height: 20%;
+        padding: 2%;
+    }
+
+    button {
+        width: 50%;
+    }
+}

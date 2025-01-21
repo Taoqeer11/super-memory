@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Mentor|Contact form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin-top: 1%; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <form action="#" id="contactForm">
+
+      <h1>Contact Us</h1>
+
+      <div class="firstInput">
+       
+         <div class="first2">
+            <p class="text" >First Name *</p>
+           <input type="text" name="" class="inputText">
+           <p id="inputError1"></p>
+         </div>
+
+          <div class="first2">
+            <p class="text" >Last Name *</p>
+            <input type="text" name="" class="inputText">
+            <p id="inputError2"></p>
+          </div>
+      </div> 
+
+      <p id="mail">Email *</p>
+      <input type="email" class="inputText">
+      <p id="inputError3" style="margin-left: 6%;"></p>
+
+      <p id="mail">Query type *</p>
+      <div class="checkBox">
+        <div class="check">
+            <input type="radio" name="" id="checkBox">
+            <label for="checkBox" >General Inquiry</label>
+        </div>
+        <div class="check">
+          <input type="radio" name="" id="support">
+           <label for="support">Support Request</label>
+        </div>
+     </div> <p id="inputError4" style="margin-left: 6%;"></p><br>
+
+      <label for="textarea" id="textareaa">Message *</label>
+        <textarea name="" id="textarea" class="area" ></textarea>
+        <p id="inputError5" style="margin-left: 6%;"></p>
+
+      <input type="checkbox" name="" id="checkSq">
+      <label for="checkSq">"I Concent to being contact by the team.* "</label>
+     <br>
+      <p id="inputError6" style="margin-left: 6%; margin-bottom: 2%;"></p>
+      <button type="submit" class="btn">SUBMIT</button> 
+    </form>
+  </div>
+
+
+  
+    <!-- Message Sent!
+    Thanks for completing the form. We'll be in touch soon! -->
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="https://web.facebook.com/TaoqeerAhmad.Rajput">Mr Taoqeer Rajput</a>.
+    </div>
+
+  <script>
+    // var btn1 = document.getElementsByClassName("btn")[0];
+    // btn1.onclick = function()
+    // {
+    //   document.querySelectorAll('input[type="text"]')[0].style.border = "3px solid red";
+      
+    // };
+    
+    
+    var btn1 = document.getElementsByClassName("btn")[0];
+    var input = document.getElementsByClassName("inputText");
+    var radioCr = document.querySelectorAll('input[type="radio"]')[0];
+    var radioCr1 = document.querySelectorAll('input[type="radio"]')[1];
+    var textArea = document.getElementsByClassName("area")[0];
+    var checkSqq = document.getElementById("checkSq");
+    var msg = "Thanks for completing the form, We'll be in contact soon";
+
+
+    btn1.onclick = function()
+    {
+      var regexAlpha = /^[A-Za-z]+$/;
+      var regexMail = /^\S+@+\S+\.+\S+$/;
+
+      if(input[0].value.match(regexAlpha))//&& input[1].value.match(regexAlpha) && input[2].value.match(regexMail))
+      {
+        // alert("okay");
+      }else
+      {
+         document.querySelectorAll('input[type="text"]')[0].style.border = "1px solid red";
+         document.getElementById("inputError1").textContent = "This field is required *";
+         document.getElementById("inputError1").style.color = "red";
+      }
+
+      if(input[1].value.match(regexAlpha))//&& input[1].value.match(regexAlpha) && input[2].value.match(regexMail))
+      {
+        // alert("okay");
+      }else
+      {
+         document.querySelectorAll('input[type="text"]')[1].style.border = "1px solid red";
+         document.getElementById("inputError2").textContent = "This field is required *";
+         document.getElementById("inputError2").style.color = "red";
+      }
+
+      if(input[2].value.match(regexMail))//&& input[1].value.match(regexAlpha) && input[2].value.match(regexMail))
+      {
+        // alert("okay");
+      }else
+      {
+         document.querySelectorAll('input[type="email"]')[0].style.border = "1px solid red";
+         document.getElementById("inputError3").textContent = "This field is required *";
+         document.getElementById("inputError3").style.color = "red";
+      }
+
+      if(radioCr.checked ||radioCr1.checked)
+      {
+        // alert("fault");
+      }else{
+        document.getElementsByClassName("check")[0].style.border = "1px solid red";
+        document.getElementsByClassName("check")[1].style.border = "1px solid red";
+         document.getElementById("inputError4").textContent = "This field is required *";
+         document.getElementById("inputError4").style.color = "red";
+      }
+      if(textArea.value !="")
+      {
+        // alert("error");
+      }else{
+        document.getElementsByClassName("area")[0].style.border = "1px solid red";
+        document.getElementById("inputError5").textContent = "This field is required *";
+        document.getElementById("inputError5").style.color = "red";
+      }
+      
+      if(checkSqq.checked)
+      {
+        // alert("no");
+      }else{
+        document.getElementById("inputError6").textContent = "To submit this form, Please Consent to being contacted *";
+        // document.querySelector("#checkSq").style.border = "3px dotted red";
+          document.getElementById("inputError6").style.color = "red";
+
+      }
+
+      if(input[0].value.match(regexAlpha) && input[1].value.match(regexAlpha) &&input[2].value.match(regexMail) &&
+       radioCr.checked ||radioCr1.checked && textArea.value !="" && checkSqq.checked)
+       {
+        alert(msg);
+       }
+
+    }
+  </script>
+</body>
+</html>

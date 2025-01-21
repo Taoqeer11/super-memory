@@ -1,0 +1,269 @@
+@font-face {
+    font-family:karla ;
+    src: url(assets/fonts/Karla-VariableFont_wght.ttf);
+}
+
+*{
+    font-family:karla ;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    margin: 2%;
+}
+#inputError1,#inputError2,#inputError3,#inputError4,#inputError5,#inputError6{
+    font-size: 10px;
+    margin-top: 1%;
+}
+input:hover, label{
+    cursor: pointer;
+}
+
+.container{
+    height: 89vh;
+    width: 45vw;
+    background-color: white;
+    border-radius: 8px;
+    background-color: rgb(254, 254, 254);
+    box-shadow: 0px 0px 7px -4px black;
+}
+.firstInput{
+    display: flex;
+    padding-left: 6%; 
+}
+.first2{
+    width: 48.5%;
+}
+input[type="text"] {
+    margin-top: 2%;
+    height: 2rem;
+    width: 95%;
+    outline:none;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 0.3rem;
+}
+.checkBox{
+    margin-left: 1%;
+    display: flex;
+    justify-content: center;
+}
+.check{
+    background-color: rgb(227, 234, 245);
+    border: 1px solid black;
+    width: 43%;
+    height: 2rem;
+    margin: 1% 2%;
+    border-radius: 5px;
+
+}
+input[type="radio"] {
+    margin:2% 6%;
+}
+input[type="email"] {
+    display: block;
+    margin: 0% 6%;
+    height: 2rem;
+    width: 89%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 0.3rem;
+}
+#mail{
+    margin-left: 6%;
+    margin-top: 1%;
+}
+.area{
+    width: 88%;
+    height: 7rem;
+    display: block;
+    margin-left:6%;
+    outline: none;
+}
+#textareaa{
+    display: block;
+    margin-top: -3%;
+    margin-left:6%;
+}
+#checkSq{
+    margin-left:2%;  
+    margin-bottom:1%;
+    margin-top:2%;   
+}
+button{
+    margin: 1% 6%;
+    height: 1.8rem;
+    width: 89%;
+    outline: none;
+    border-radius: 5px;
+    border: 0px;
+    background-color: hsl(169, 82%, 27%);
+    color: white;
+    font-weight: 600;
+}
+button:hover{
+    background-color: hsl(169, 91%, 14%);
+    cursor: pointer;
+}
+
+/* Responsive start */
+
+@media (max-width:480px){
+
+    body{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        margin:5% 4%;
+    }
+    .container{
+        height: 95vh;
+        width: 92vw;
+        border-radius: 0px;
+    }
+    input[type="text"] {
+        margin-top: 0%;
+        margin-left: 1%;
+        height: 2rem;
+        width: 92%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid black;
+        padding-left: 0.3rem;
+    }
+    .text{
+        margin-top: 3%;
+    }
+    input[type="email"] {
+        display: block;
+        width: 87%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid black;
+        padding-left: 0.3rem;
+    }
+    .firstInput{
+        display: block;
+        padding-left: 5%;
+        justify-content:center;
+        width: 100%;
+    }
+    .first2{
+        width: 100%;
+    }
+    #mail{
+        margin-left: 6%;
+        margin-top: 3%;
+    }
+    .check {
+        border: 1px solid black;
+        width: 87%;
+        height: 2rem;
+        margin: 3% 5%;
+        border-radius: 5px;
+    }
+    .checkBox{
+        margin-left: 1%;
+        display: block;
+    }
+    #checkSq{
+    margin-left:2%;  
+    margin-bottom:1%;
+    margin-top:5%;   
+    }
+    #textareaa{
+        display: block;
+        margin-top: 0%;
+        margin-left:6%;
+    }
+    .attribution { font-size: 10px; text-align: center; margin-top: 2%; }
+
+
+    #inputError1,#inputError2,#inputError3,#inputError4,#inputError5,#inputError6{
+        font-size: 14px;
+        margin-top: 1%;
+    }
+}
+
+
+
+
+
+
+
+@media (min-width:481px) and (max-width:1024px){
+    body{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        margin:5% 4%;
+    }
+    .container{
+        height: 95vh;
+        width: 90vw;
+        border-radius: 0px;
+    }
+    input[type="text"] {
+        margin-top: 3%;
+        height: 2rem;
+        width: 92%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid black;
+        padding-left: 0.3rem;
+    }
+    input[type="email"] {
+        display: block;
+        width: 89%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid black;
+        padding-left: 0.3rem;
+    }
+    .firstInput{
+        padding-left: 5%;
+        justify-content:center;
+    }
+    #mail{
+        margin-left: 6%;
+        margin-top: 3%;
+    }
+    #checkSq{
+    margin-left:2%;  
+    margin-bottom:1%;
+    margin-top:5%;   
+    }
+    #textareaa{
+        display: block;
+        margin-top: 0%;
+        margin-left:6%;
+    }
+    button:hover{
+        background-color: hsl(169, 91%, 14%);
+        cursor: pointer;
+    }
+    
+
+    #inputError1,#inputError2,#inputError3,#inputError4,#inputError5,#inputError6{
+        font-size: 14px;
+        margin-top: 1%;
+    }
+}

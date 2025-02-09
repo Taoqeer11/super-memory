@@ -617,7 +617,7 @@ label.valid {
         height: 100vh;
       }
       .signup-form{
-        height: 90vh;
+        height: 95vh;
       }
       #inputError1,#inputError2,#inputError3,#inputError4,#inputError5{
         /* margin-left: -60px; */

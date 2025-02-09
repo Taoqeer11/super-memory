@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Generate Random Password</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="iconsShow-password.png">
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+    body {
+        display: flex;
+        margin-top: 10%;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 60vh;
+        width: 40vw;
+        box-shadow: 2px 2px 8px black;
+        background-color: rgb(135, 168, 168);
+    }
+    .box {
+        margin-top: 45px;
+        height: 17%;
+        width: 70%;
+        background-color: white;
+        border-radius: 10px;
+    }
+    #passsword{
+            font-size: 22px;
+            padding: 5px;
+            padding-top: 20px;
+            padding-bottom: -5px;
+        }
+    h1 span {
+        border-bottom: 4px solid rgb(7, 149, 7);
+        color: rgb(34, 96, 2);
+    }
+    .box img {
+        height: 25px;
+    }
+    input {
+        border: 0;
+        outline: none;
+        height: 28px;
+        width: 70%;
+        margin-left: 10%;
+    }
+    button {
+        outline: none;
+        border: 0;
+        padding: 10px 30px;
+        margin-left: 20%;
+        margin-top: 17%;
+        border-radius: 10px;
+        font-size: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        color: rgb(141, 149, 141);
+    }
+    button:hover {
+        color: black;
+    }
+    i {
+        cursor: pointer;
+        font-weight: 600;
+        color: rgb(141, 149, 141);
+    }
+    i:hover {
+        color: black;
+    }
+
+    /* Media Queries for Responsiveness */
+  
+    @media (max-width: 480px) {
+        .container {
+            width: 100vw; 
+            height: 90vh;
+            border-radius: 10px; 
+            /* background-color: aqua; */
+        }
+        h1 {
+            font-size: 38px;
+            margin-top: 90px;
+            margin-bottom: 50px;
+        }
+        .fa-copy{
+            font-size: 30px;
+        }
+        #passsword{
+            font-size: 22px;
+            padding: 5px;
+            padding-top: 50px;
+            padding-bottom: -5px;
+        }
+        button {
+            font-size: 18px; /* Smaller button font size for mobile devices */
+            padding: 16px 40px; /* Adjust button padding for mobile */
+            margin-top: 40%;
+        }
+        input {
+            font-size: 14px; /* Smaller font size for input field */
+        }
+}
+
+@media (min-width: 481px)and (max-width:767px) {
+        .container {
+            width: 100vw; 
+            height: 90vh;
+            border-radius: 10px; 
+            /* background-color: aqua; */
+        }
+        h1 {
+            font-size: 38px;
+            margin-top: 90px;
+            margin-bottom: 50px;
+        }
+        .fa-copy{
+            font-size: 40px;
+        }
+        #passsword{
+            font-size: 22px;
+            padding: 5px;
+            padding-top: 50px;
+            padding-bottom: -5px;
+        }
+        button {
+            font-size: 18px; /* Smaller button font size for mobile devices */
+            padding: 16px 40px; /* Adjust button padding for mobile */
+            margin-top: 40%;
+        }
+        input {
+            font-size: 14px; /* Smaller font size for input field */
+            margin-top: 30px;
+        }
+
+}
+    @media (min-width: 768px) and (max-width:1220px) {
+    .container {
+        width: 70vw; /* Full screen width for mobile devices */
+        height: 90vh; /* Adjust height for better spacing */
+        border-radius: 10px; /* Remove border radius for full-screen effect */
+        /* background-color: rgb(166, 219, 219); */
+    }
+    h1 {
+            font-size: 38px;
+            margin-top: 90px;
+            margin-bottom: 50px;
+        }
+        button {
+            font-size: 18px; /* Smaller button font size for mobile devices */
+            padding: 16px 40px; /* Adjust button padding for mobile */
+            margin-top: 98px;
+        }
+        #passsword{
+            font-size: 28px;
+            padding: 5px;
+            padding-top: 30px;
+            padding-bottom: -5px;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Generate a <br> <span> Unique Password</span></h1>
+        <div class="box">
+            <input type="text" id="passsword">
+            <i class="fa-regular fa-copy" onclick="copyPass()"></i>
+            <button onclick="creatPassword()">Click <i class="fa-solid fa-arrows-rotate"> </i></button>
+        </div>
+    </div>
+
+    <script>
+        var passswordbox = document.getElementById("passsword");
+        var length = 12;
+
+        var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+        var specialChar = "@#$%^&*()_+~|}{[]></-=";
+        var numbers = "0123456789";
+
+        var allChar = upperCase + lowerCase + specialChar + numbers;
+
+        function creatPassword() {
+            let passsword = "";
+            passsword += upperCase[Math.floor(Math.random() * upperCase.length)];
+            passsword += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+            passsword += specialChar[Math.floor(Math.random() * specialChar.length)];
+            passsword += numbers[Math.floor(Math.random() * numbers.length)];
+
+            while (length > passsword.length) {
+                passsword += allChar[Math.floor(Math.random() * allChar.length)];
+            }
+            passswordbox.value = passsword;
+        }
+
+        function copyPass() {
+            passswordbox.select();
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>

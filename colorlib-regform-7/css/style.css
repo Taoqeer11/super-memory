@@ -605,6 +605,9 @@ label.valid {
     margin-right: 0px;
     margin-bottom: 10px; } }
 
+ .form-button2{
+      display: none;
+    }
 
 
 
@@ -622,6 +625,13 @@ label.valid {
       #inputError1,#inputError2,#inputError3,#inputError4,#inputError5{
         /* margin-left: -60px; */
         font-size: 6px;
+      }
+      .form-button{
+      display: none;
+    }
+      .form-button2{
+        display: flex;
+        margin-top: -45px;
       }
     }
 

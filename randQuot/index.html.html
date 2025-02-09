@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="icons-quote.png">
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+        .main {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+        }
+        .container {
+            border-radius: 9px;
+            height: 40vh;
+            width: 40vw;
+            background-color: rgb(211, 211, 211);
+            box-shadow: 0px 4px 4px 0px rgb(55, 57, 57);
+        }
+        .div1 {
+            display: flex;
+            height: 33%;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .div2 {
+            height: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div2 button {
+            height: 50px;
+            width: 80%;
+            border: 0ch;
+            border-radius: 6px;
+            font-size: 22px;
+            background-color: rgb(215, 2, 146);
+            cursor: pointer;
+            color: white;
+        }
+        .div2 button:hover {
+            background-color: rgb(254, 8, 176);
+        }
+        .div3 p {
+            margin-left: 15px;
+            margin-top: 15px;
+            font-weight: 900;
+        }
+        .box {
+            color: rgb(25, 173, 141);
+            font-size: larger;
+        }
+        #box1 {
+            display: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 80vw; /* Wider container for smaller screens */
+                height: 50vh; /* Adjust height for better readability */
+            }
+            .div2 button {
+                font-size: 18px; /* Smaller font size for buttons */
+            }
+            .div1 h1 {
+                font-size: 24px; /* Smaller heading for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 90vw; /* Even wider for very small screens */
+                height: 60vh; /* Adjust height for better spacing */
+            }
+            .div2 button {
+                font-size: 16px; /* Smaller font size for buttons */
+            }
+            .div1 h1 {
+                font-size: 20px; /* Smaller heading for very small screens */
+            }
+            .div3 p {
+                font-size: 14px; /* Smaller font size for quotes */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="div1"><h1>Random Quote Generator</h1></div>
+            <div class="div2"> <button id="btn" onclick="a()">Click To Quote!</button></div>
+            <div class="div3"> <p id="randQuot">"Generate Quote Randomly"</p></div>
+        </div>
+    </div>
+
+    
+    <script>
+
+        window.onload = function getReadyQuote() {
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                var readyQuoteArry = [
+                    "0..Be the change that you wish to see in the world.",
+                    "1..In the middle of difficulty lies opportunity – Albert Einstein",
+                    "2..Dream big and dare to fail.",
+                    "3..Act as if what you do makes a difference. It does.",
+                    "4..Stay hungry, stay foolish.",
+                    "5..No pressure, no diamonds.",
+                    "6..Simplicity is the ultimate sophistication.",
+                    "7..What you seek is seeking you.",
+                    "8..Happiness depends upon ourselves.",
+                    "9..Keep your face always toward the sunshine—and shadows will fall behind you."
+                ];
+                var randQuot = document.getElementById("randQuot");
+                var rand = Math.floor(Math.random() * 10);
+
+                randQuot.textContent = "\"" + readyQuoteArry[rand] + "\"";
+            }
+        }
+    </script>
+</body>
+</html>

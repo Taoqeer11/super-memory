@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BISMILLAHIR REHMANIR RAHEEM -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="icon" type="image/icon" href="faviconWatch.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .container {
+            background-image: linear-gradient(to bottom right, rgb(240, 33, 33), rgb(120, 236, 120), rgb(232, 232, 80));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 60vh;
+            /* max-width: 98%; */
+            width: 50%;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        i {
+            cursor: pointer;
+            font-size: 2rem;
+            text-shadow: 2px 2px 5px yellow;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .container {
+                height: 55vh;
+                width: 90%;
+            }
+            i {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                height: 60vh;
+            }
+            i {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stop Watch</h1>
+        <h1 id="time">0:00:00:00</h1>
+        <div class="icons">
+            <i class="fa-solid fa-rotate-right" onclick="refresh()"></i>
+            <i class="fa-solid fa-play" id="playPause" onclick="togglePlayPause()"></i>
+            <i class="fa-solid fa-stop" onclick="watchStop()"></i>
+        </div>
+    </div>
+
+    <script>
+        let [meliSec, seconds, minutes, hours] = [0, 0, 0, 0];
+        let time = document.getElementById("time");
+        let timer = null;
+
+        function watch() {
+            meliSec++;
+            if (meliSec == 100) {
+                meliSec = 0;
+                seconds++;
+            }
+            if (seconds == 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes == 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            let h = hours < 10 ? "" + hours : hours;
+            let m = minutes < 10 ? "0" + minutes : minutes;
+            let s = seconds < 10 ? "0" + seconds : seconds;
+            let ms = meliSec < 10 ? "0" + meliSec : meliSec;
+            time.innerHTML = h + ":" + m + ":" + s + ":" + ms;
+        }
+
+        function watchStart() {
+            if (timer !== null) {
+                clearInterval(timer);
+            }
+            timer = setInterval(watch, 10);
+        }
+
+        function watchStop() {
+            clearInterval(timer);
+        }
+
+        function refresh() {
+            clearInterval(timer);
+            [meliSec, seconds, minutes, hours] = [0, 0, 0, 0];
+            time.innerHTML = "0:00:00:00";
+            resetPlayIcon();
+        }
+
+        function togglePlayPause() {
+            let playPauseIcon = document.getElementById("playPause");
+            if (playPauseIcon.classList.contains("fa-play")) {
+                playPauseIcon.classList.remove("fa-play");
+                playPauseIcon.classList.add("fa-pause");
+                watchStart();
+            } else {
+                playPauseIcon.classList.remove("fa-pause");
+                playPauseIcon.classList.add("fa-play");
+                watchStop();
+            }
+        }
+
+        function resetPlayIcon() {
+            let playPauseIcon = document.getElementById("playPause");
+            playPauseIcon.classList.remove("fa-pause");
+            playPauseIcon.classList.add("fa-play");
+        }
+    </script>
+</body>
+</html>

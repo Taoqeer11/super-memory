@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finite Automata Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 5px #000;
+    }
+    p {
+      font-size: 1.2em;
+      padding: 0 10px;
+    }
+    #gameContainer {
+      width: 100%;
+      overflow-x: auto;
+      padding: 10px;
+    }
+    canvas {
+      background: #f0f8ff;
+      border: 4px solid #00c3ff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00c3ff;
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+      height: auto;
+    }
+    #inputString, #status {
+      font-size: 1.4em;
+      margin: 15px;
+      text-shadow: 1px 1px 3px #000;
+      word-break: break-word;
+    }
+    #status {
+      font-weight: bold;
+    }
+    /* Controller Buttons */
+    #controls {
+      margin: 15px 0;
+    }
+    .btn {
+      background: #00c3ff;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.4em;
+      margin: 5px;
+      padding: 10px 20px;
+      box-shadow: 0 0 10px #00c3ff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0099cc;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      p, #inputString, #status {
+        font-size: 1.1em;
+      }
+      .btn {
+        font-size: 1.2em;
+        padding: 8px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>"Binary State Machine Simulator"<span style="font-size: 15px; text-decoration: underline; color: yellowgreen;">By Taoqeer Ahmad </span></h1>
+<p>Type a binary string (0s and 1s) or use buttons, then press ENTER to validate.</p>
+
+<div id="gameContainer">
+  <canvas id="gameCanvas"></canvas>
+</div>
+
+<div id="controls">
+  <button class="btn" onclick="handleInput('0')">0</button>
+  <button class="btn" onclick="handleInput('1')">1</button>
+  <button class="btn" onclick="handleInput('Backspace')">Backspace</button>
+  <button class="btn" onclick="handleInput('Enter')">Enter</button>
+</div>
+
+<p id="inputString">Input: </p>
+<p id="status"></p>
+
+<script>
+// Get canvas and context
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+let input = "";
+let currentState = "q0";
+let accepting = false;
+let scale = 1;
+
+// Define DFA states with relative positions
+const states = {
+  q0: { x: 0.15, y: 0.6, label: "q0 (Start)" },
+  q1: { x: 0.45, y: 0.3, label: "q1" },
+  q2: { x: 0.75, y: 0.6, label: "q2 (Accept)" }
+};
+
+// Resize canvas according to screen
+function resizeCanvas() {
+  canvas.width = window.innerWidth > 700 ? 1000 : window.innerWidth - 30;
+  canvas.height = 280;
+  scale = canvas.width / 1000;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Get actual position based on canvas size
+function getPos(state) {
+  return {
+    x: states[state].x * canvas.width,
+    y: states[state].y * canvas.height
+  };
+}
+
+// Draw an arrow between two states
+function drawArrow(fromState, toState, label) {
+  const from = getPos(fromState);
+  const to = getPos(toState);
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const angle = Math.atan2(dy, dx);
+
+  const startX = from.x + 60 * scale * Math.cos(angle);
+  const startY = from.y + 60 * scale * Math.sin(angle);
+  const endX = to.x - 60 * scale * Math.cos(angle);
+  const endY = to.y - 60 * scale * Math.sin(angle);
+
+  ctx.strokeStyle = "#333";
+  ctx.lineWidth = 3 * scale;
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(endX, endY);
+  ctx.stroke();
+
+  // Arrow head
+  ctx.beginPath();
+  ctx.moveTo(endX, endY);
+  ctx.lineTo(endX - 12 * scale * Math.cos(angle - 0.3), endY - 12 * scale * Math.sin(angle - 0.3));
+  ctx.lineTo(endX - 12 * scale * Math.cos(angle + 0.3), endY - 12 * scale * Math.sin(angle + 0.3));
+  ctx.closePath();
+  ctx.fillStyle = "#333";
+  ctx.fill();
+
+  // Label
+  ctx.fillStyle = "#111";
+  ctx.font = `${18 * scale}px Poppins`;
+  ctx.fillText(label, (from.x + to.x) / 2 - 10, (from.y + to.y) / 2 - 10);
+}
+
+// Draw a state circle
+function drawState(state, isCurrent, isAccept) {
+  const pos = getPos(state);
+
+  const gradient = ctx.createRadialGradient(pos.x, pos.y, 20 * scale, pos.x, pos.y, 60 * scale);
+  gradient.addColorStop(0, isAccept ? "#a8ff78" : "#78ffd6");
+  gradient.addColorStop(1, isAccept ? "#78ffd6" : "#4facfe");
+
+  ctx.beginPath();
+  ctx.arc(pos.x, pos.y, 60 * scale, 0, 2 * Math.PI);
+  ctx.fillStyle = isCurrent ? "#ffe259" : gradient;
+  ctx.fill();
+  ctx.strokeStyle = "#333";
+  ctx.lineWidth = 4 * scale;
+  ctx.stroke();
+
+  if (isAccept) {
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 50 * scale, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+
+  ctx.fillStyle = "#111";
+  ctx.font = `bold ${18 * scale}px Poppins`;
+  ctx.fillText(states[state].label, pos.x - 40 * scale, pos.y + 5 * scale);
+}
+
+// Draw player (red) circle
+function drawPlayerCircle() {
+  const pos = getPos(currentState);
+
+  ctx.beginPath();
+  ctx.arc(pos.x, pos.y, 20 * scale, 0, 2 * Math.PI);
+  ctx.fillStyle = "#ff5252";
+  ctx.shadowColor = "#ff1744";
+  ctx.shadowBlur = 20 * scale;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+}
+
+// Main draw function
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawArrow("q0", "q1", "0");
+  drawArrow("q0", "q0", "1");
+  drawArrow("q1", "q2", "1");
+  drawArrow("q1", "q1", "0");
+  drawArrow("q2", "q2", "0/1");
+
+  drawState("q0", currentState === "q0", false);
+  drawState("q1", currentState === "q1", false);
+  drawState("q2", currentState === "q2", true);
+
+  drawPlayerCircle();
+}
+
+// DFA Simulation
+function dfaAccepts(str) {
+  let state = "q0";
+  for (let ch of str) {
+    if (state === "q0") {
+      state = (ch === "0") ? "q1" : "q0";
+    } else if (state === "q1") {
+      state = (ch === "0") ? "q1" : "q2";
+    } else if (state === "q2") {
+      state = "q2";
+    }
+  }
+  return state;
+}
+
+// Handle input from both keyboard and buttons
+function handleInput(key) {
+  if (key === "Enter") {
+    const endState = dfaAccepts(input);
+    currentState = endState;
+    accepting = (endState === "q2");
+
+    document.getElementById("status").textContent = accepting ? "Accepted! 🎉" : "Rejected ❌";
+    document.getElementById("status").style.color = accepting ? "#00ff00" : "#ff1744";
+    input = "";
+    document.getElementById("inputString").textContent = "Input: ";
+  } else if (key === "Backspace") {
+    input = input.slice(0, -1);
+    document.getElementById("inputString").textContent = "Input: " + input;
+  } else if (key === "0" || key === "1") {
+    input += key;
+    document.getElementById("inputString").textContent = "Input: " + input;
+  }
+}
+
+// Keyboard listener
+document.addEventListener("keydown", (e) => {
+  handleInput(e.key);
+});
+
+// Animation loop
+function gameLoop() {
+  draw();
+  requestAnimationFrame(gameLoop);
+}
+gameLoop();
+</script>
+
+</body>
+</html>

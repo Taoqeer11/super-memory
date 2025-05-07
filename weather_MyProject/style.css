@@ -1,0 +1,113 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    /* background-image: url(jack-b-SxhNnU46jAc-unsplash.jpg); */
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight:bold;
+    font-family: sans-serif;
+}
+.main{
+    height: 100vh;
+    width: 50vw;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    text-align: center;
+    margin:  -15px 5px 30px 15px; 
+}
+.inputField{
+    height: 7%;
+    width: 40%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    margin-left: -45%;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button :hover{
+    color: rgb(103, 103, 103);
+    cursor: pointer;
+}
+button{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+     outline: none;
+      border: 0px;
+}
+input{
+    outline: none;
+    border: none;
+
+}
+.time{
+    /* line-height: 23px; */
+    /* border: 1px solid black; */
+    margin-top: -10px;
+    margin-left: 15px;
+}
+.cityName{
+    /* line-height: 23px; */
+    text-decoration: underline;
+    text-align: center;
+
+}
+.clear{
+    margin-left: 20px;
+    text-align: center;
+}
+.icon{
+    text-align: center;
+    margin-top: -24px;
+    margin-bottom: -25px;
+}
+.temp{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.location{
+    width: 50%;
+}
+.wind_details{
+    height: 20vh;
+    width: 70%;
+    margin-top: 7%;
+}
+.feelslike, .feelslike1, .feelslike2, .feelslike3{
+    margin: 9px;
+    margin-left: 10px;
+    /* margin-left: 10px; */
+    height: 38px;
+    width: 55%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.feelslike, .feelslike1, .feelslike2, .feelslike3, i{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    /* color: rgb(86, 85, 85); */
+}
+.above{
+    margin-left: 10px;
+    margin: 2px;
+    display: flex;
+    /* justify-content: center; */
+}

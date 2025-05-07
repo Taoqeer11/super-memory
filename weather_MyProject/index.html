@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>weather_forecast</title>
+  <link rel="icon" href="weather.png" type="image/x-icon"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <h2>WELCOME TO WEATHER FORECAST</h2>
+
+      <form class="inputField">
+        <label for="search"><button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button></label>
+        <input type="search" id="search" placeholder="Enter City Name" />
+      </form>
+
+      <div class="location">
+         <div class="city"> <!--//style="border: 2px solid rgb(6, 246, 42) -->
+          <p class="cityName">Multan, Pakistan</p>
+          <p class="time">Date & Time</p>
+        </div>
+        <div class="clear"><!-- style="border: 2px solid green">-->
+          <p class="w_clear">Clear</p>
+          <p class="icon">icon</p>
+          <p class="temp">298.15 &#176</p>
+        </div>
+      </div>
+
+      <div class="wind_details">
+        <div class="above">
+          <div class="feelslike">
+            <i class="fa-solid fa-hand-holding-droplet"></i>
+          </div>
+          <div class="feelslike1">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+        </div>
+        <div class="above">
+          <div class="feelslike2">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <div class="feelslike3">
+            <i class="fa-solid fa-compress"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+    
+    <script src="script.js"></script>
+  
+</body>
+</html>
